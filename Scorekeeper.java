@@ -16,11 +16,10 @@ public class Scorekeeper
 
     public static void updateScore()
     {
-        int scoreInc = 1;/*later implementation assign
-        the increase in score related to player's time of playing
-        to scoreInc
-        */
-        score = score + scoreInc;
+        long currentTime = System.currentTimeMillis();
+        int timeElapsed = (int) ((currentTime - startTime) / 1000); // Time in seconds
+        score += Math.max(27 - timeElapsed, 10); // Example scoring logic
+        startTime = currentTime; // Reset the start time
     }
     
     public static int getScore()
