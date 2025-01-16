@@ -45,7 +45,14 @@ public class Deck
         { 
             shuffledDeck.add(unShuffledDeck[i]);
         }
-        //Collections.shuffle(shuffledDeck);
+        for (int i = shuffledDeck.size() - 1; i > 0; i--) 
+        {
+            int j = (int) (Math.random() * (i + 1)); // Random index from 0 to i
+            // Swap shuffledDeck[i] with shuffledDeck[j]
+            Card temp = shuffledDeck.get(i);
+            shuffledDeck.set(i, shuffledDeck.get(j));
+            shuffledDeck.set(j, temp);
+        }
     }
     
     private void populateUnshuffledDeckWithCards(int numOfCardsInDeck)        
