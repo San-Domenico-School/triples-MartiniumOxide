@@ -22,27 +22,27 @@ public class Deck
         createShuffledDeck();                                      // Initializes shuffled deck excluding blank card
     }
     
-    public int getNumCardsInDeck()
+    protected int getNumCardsInDeck()
     {
         return shuffledDeck.size();
     }
     
-    public Card getTopCard()
+    protected Card getTopCard()
     {
         return shuffledDeck.remove(0);
     }
     
-    public Card getShuffledCard(int index)
+    protected Card getShuffledCard(int index)
     {
         return shuffledDeck.get(index);
     }
     
-    public ArrayList<Card> getShuffledDeck()
+    protected ArrayList<Card> getShuffledDeck()
     {
         return shuffledDeck;
     }
     
-    public int limitNumCardsInDeck(int limit)
+    protected int limitNumCardsInDeck(int limit)
     {
         return (limit <= 27) ? 27 : 81;
     }
