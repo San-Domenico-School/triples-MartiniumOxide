@@ -13,6 +13,15 @@ public class Deck
     private Card[] unShuffledDeck;
     private ArrayList<Card> shuffledDeck;
     
+    public Deck(int numOfCardsInDeck)
+    {
+        numOfCardsInDeck = limitNumCardsInDeck(numOfCardsInDeck);  // limits size to 27 or 81        
+        unShuffledDeck = new Card[numOfCardsInDeck + 1];           // playing cards plus blank card
+        shuffledDeck = new ArrayList<>();                          // Instantiates ArrayList with no elements
+        populateUnshuffledDeckWithCards(numOfCardsInDeck);         // Initializes Unshuffled Deck
+        createShuffledDeck();                                      // Initializes shuffled deck excluding blank card
+    }
+    
     public int getNumCardsInDeck()
     {
         return shuffledDeck.size();
