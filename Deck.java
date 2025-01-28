@@ -47,7 +47,7 @@ public class Deck
         return (limit <= 27) ? 27 : 81;
     }
     
-    private void createShuffledDeck()
+    protected void createShuffledDeck()
     {
         shuffledDeck.clear();
         for (int i = 1; i < unShuffledDeck.length; i++) 
