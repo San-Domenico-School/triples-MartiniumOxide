@@ -36,7 +36,6 @@ public class Dealer extends Actor
     public void dealBoard() 
     {
         Greenfoot.playSound("shuffle.wav");
-        Deck deck = new Deck(27);
         deck.createShuffledDeck();
         for (int i = 0; i < 5; i++)
         {
@@ -51,8 +50,8 @@ public class Dealer extends Actor
     
     public void setUI() 
     {
-        int cardsRemaining = deck.getNumCardsInDeck();
-        Integer score = triplesRemaining;
+        int cardsRemaining = deck.getNumCardsInDeck(); 
+        Integer score = Scorekeeper.getScore();
         getWorld().showText("" + cardsRemaining, 314, 469);
         getWorld().showText("" + score, 314, 505);
     }
@@ -163,7 +162,10 @@ public class Dealer extends Actor
         // Logic for actions if a triple is found
     }
 
-    public void setCardsSelected(ArrayList<Card> selectedCards, ArrayList<Integer> selectedIndexes, Card[] selectedArray) {
+    public void setCardsSelected(ArrayList<Card> selectedCards, 
+                                ArrayList<Integer> selectedIndexes, 
+                                Card[] selectedArray) 
+    {
         this.cardsOnBoard = selectedCards;
         this.selectedCardsIndex = selectedIndexes;
         this.cardsSelected = selectedArray;
