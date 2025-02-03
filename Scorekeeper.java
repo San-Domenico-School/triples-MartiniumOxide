@@ -22,6 +22,11 @@ public class Scorekeeper
         startTime = currentTime; // Reset the start time
     }
     
+    public static void resetScore()
+    {
+        score = 0;
+    }
+    
     public static int getScore()
     {
         return score;

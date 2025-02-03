@@ -49,7 +49,7 @@ public class Player extends Actor
                 {
                     card.setIsSelected(false);
                     card.setImage(card.getCardImage());
-                    selectedCardsIndex.remove((Integer) i); 
+                    selectedCardsIndex.remove(i); 
                 } 
                 else 
                 {

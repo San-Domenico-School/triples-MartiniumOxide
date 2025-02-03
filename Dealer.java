@@ -30,6 +30,7 @@ public class Dealer extends Actor
     {
         dealBoard();
         setUI();
+        
     }
 
     // Task 6 - Implement dealBoard
@@ -72,8 +73,8 @@ public class Dealer extends Actor
         if (shapeFactor && colorFactor && numberOfShapesFactor
             && shadingFactor)
         {
-            actionIfTriple();
-            System.out.print("triple found");
+            actionIfTriple(cardsSelected);
+            System.out.println("triple found");
         }
     }
     
@@ -158,8 +159,18 @@ public class Dealer extends Actor
     }
 
     
-    public void actionIfTriple() {
-        // Logic for actions if a triple is found
+    public void actionIfTriple(Card[] cardsSelected) 
+    {
+        for(int i = 0; i < 3; i++)
+        {
+            Scorekeeper.updateScore();
+            int xPos = cardsSelected[i].getX();
+            int yPos = cardsSelected[i].getY();
+            getWorld().removeObject(cardsSelected[i]);
+            Card card = deck.getTopCard();
+            getWorld().addObject(card, xPos, yPos);
+        }
+        setUI();
     }
 
     public void setCardsSelected(ArrayList<Card> selectedCards, 
