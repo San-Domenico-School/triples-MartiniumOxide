@@ -70,6 +70,9 @@ public class Dealer extends Actor
         checkColor(cardsSelected);
         checkNumberOfShapes(cardsSelected);
         checkShading(cardsSelected);
+        System.out.println("cardsOnBoard size: " + cardsOnBoard.size());
+        System.out.println("selectedCardsIndex: " + selectedCardsIndex);
+        System.out.println("cardsSelected: " + cardsSelected);
         if (shapeFactor && colorFactor && numberOfShapesFactor
             && shadingFactor)
         {
