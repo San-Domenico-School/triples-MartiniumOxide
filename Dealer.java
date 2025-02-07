@@ -170,9 +170,13 @@ public class Dealer extends Actor
             int xPos = cardsSelected[i].getX();
             int yPos = cardsSelected[i].getY();
             getWorld().removeObject(cardsSelected[i]);
-            Card card = deck.getTopCard();
-            getWorld().addObject(card, xPos, yPos);
+            if (deck.getNumCardsInDeck() > 0) 
+            {
+                Card card = deck.getTopCard();
+                getWorld().addObject(card, xPos, yPos);
+            }
         }
+        cardsOnBoard = new ArrayList<>(getWorld().getObjects(Card.class));
         setUI();
     }
 

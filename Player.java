@@ -40,6 +40,7 @@ public class Player extends Actor
     
     private void selectCards()
     {
+        cardsOnBoard = new ArrayList<>(getWorld().getObjects(Card.class));
         for (int i = 0; i < cardsOnBoard.size(); i++)
         {
             if(Greenfoot.mouseClicked(cardsOnBoard.get(i)))
@@ -49,7 +50,7 @@ public class Player extends Actor
                 {
                     card.setIsSelected(false);
                     card.setImage(card.getCardImage());
-                    selectedCardsIndex.remove(i);
+                    selectedCardsIndex.remove(Integer.valueOf(i));
                 } 
                 else 
                 {
@@ -69,6 +70,7 @@ public class Player extends Actor
             card.setIsSelected(false);
         }
         selectedCardsIndex.clear();
+        cardsSelected = new Card[3];;
     }
     
     private boolean setCardsSelected()
